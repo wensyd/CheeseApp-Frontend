@@ -78,9 +78,11 @@ const navigate = useNavigate()
 
     return (
       <div className="acheese">
+        <div className="cheesecontent">
         <h1>{acheese.name}</h1>
         <h2>{acheese.countryOfOrigin}</h2>
         <img src={acheese.image} alt={acheese.name} />
+        </div>
         {form}
         <button onClick={removeCheese}>DELETE CHEESE</button>
       </div>

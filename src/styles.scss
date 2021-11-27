@@ -1,8 +1,9 @@
 // ---------------------
 // Variables
 // ---------------------
-$maincolor: teal;
+$maincolor: rgb(33, 173, 173);
 $contrastcolor: white;
+$alertcolor:red;
 
 // ---------------------
 // Mixins
@@ -15,7 +16,12 @@ $contrastcolor: white;
 
 @mixin teal-text-white-bg {
     color: $maincolor;
-    background-color: $contrastcolor
+    background-color: $contrastcolor;
+}
+
+@mixin white-text-red-bg{
+    color: $contrastcolor;
+    background-color: $alertcolor;
 }
 
 // ---------------------------------
@@ -44,15 +50,20 @@ nav {
 section,
 div {
   form {
+      margin-left: 10% ;
+
+
     input {
       @include white-text-teal-bg;
       padding: 10px;
       font-size: 1.1em;
       margin: 10px;
+      
 
       &[type="submit"]:hover {
-        @include teal-test-white-bg;
+        @include teal-text-white-bg;
       }
+
     }
   }
 }
@@ -61,12 +72,13 @@ div {
 // button
 // --------------------------
 
-button#delete {
-  @include white-text-teal-bg;
-  display: block;
-  margin: auto;
+button {
+  @include white-text-red-bg;
+  display: flex;
+  justify-content: center;
   font-size: 1.3em;
-  padding: 10px;
+  margin: 10px 0 0 465px;
+
 }
 
 // --------------------------
@@ -78,4 +90,21 @@ img {
   height: 300px;
   border-radius: 90px;
   object-fit: cover;
+}
+
+section,
+div.cheese {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div.cheesecontent {
+    text-align: center;
+    margin: 10px;
+}
+
+
+div.acheese{
+    margin: 10px;
 }

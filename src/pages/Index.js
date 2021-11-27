@@ -75,11 +75,13 @@ if (props.cheese) {
       {props.cheese.map((acheese) => {
         return (
           <div key={acheese._id} className="cheese">
+            <div className="cheesecontent">
             <Link to={`/cheese/${acheese._id}`}>
               <h1>{acheese.name}</h1>
             </Link>
             <img src={acheese.image} alt={acheese.name} />
             <h3>{acheese.countryOfOrigin}</h3>
+            </div>
           </div>
         );
       })}
